@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://3v8rsr56lh20"]
+
+[ext_resource type="PackedScene" uid="uid://ccan36u05qhbn" path="res://Scenes/Entities/EntityProperties/entity_movement.tscn" id="1_i3s4o"]
+[ext_resource type="Script" path="res://Scenes/Entities/entity.gd" id="1_ur5sv"]
+
+[node name="Entity" type="CharacterBody2D"]
+script = ExtResource("1_ur5sv")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+
+[node name="EntityMovement" parent="." instance=ExtResource("1_i3s4o")]
