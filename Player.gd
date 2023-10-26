@@ -1,4 +1,4 @@
-extends CharacterBody2D;
+extends Entity;
 
 func get_movement_direction_input() -> Vector2:
 	return Input.get_vector("Left", "Right", "Up", "Down");
