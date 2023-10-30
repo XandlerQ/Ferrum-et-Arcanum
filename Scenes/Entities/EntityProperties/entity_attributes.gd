@@ -1,14 +1,19 @@
 extends Node2D;
 class_name EntityAttributes;
 
+@export var level: int = 1;
+
 @export var vitality: int = 1;
 @export var vitalityModifier: int = 0;
+@export var vitalityHealthMultiplier: float = 1.5;
 
 @export var endurance: int = 1;
 @export var enduranceModifier: int = 0;
+@export var enduranceStaminaMultiplier: float = 1.5;
 
 @export var wisdom: int = 1;
 @export var wisdomModifier: int = 0;
+@export var wisdomManaMultiplier: float = 1.5;
 
 @export var strength: int = 1;
 @export var strengthModifier: int = 0;
@@ -62,8 +67,14 @@ func change_attribute_modifier_by(attribute: String, value: int) -> bool:
 	self.set(attribute + "Modifier", attributeModifierValue + value);
 	return true;
 
-func get_health() -> float:
-	
+func get_attribute_health() -> float:
+	return get_attribute("vitality") * vitalityHealthMultiplier;
+
+func get_attribute_stamina() -> float:
+	return get_attribute("endurance") * enduranceStaminaMultiplier;
+
+func get_attribute_mana() -> float:
+	return get_attribute("wisdom") * wisdomManaMultiplier;
 
 
 
