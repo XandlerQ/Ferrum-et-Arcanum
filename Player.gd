@@ -12,10 +12,12 @@ func movement(delta: float):
 		$EntityMovement.run_in_direction(delta, movementDirectionInput);
 	elif (dashInput):
 		$EntityMovement.dash_in_direction(delta, movementDirectionInput);
+		$EntityHMS.lower_stamina(2);
 	else:
 		$EntityMovement.walk_in_direction(delta, movementDirectionInput);
 	
-	
+	$EntityHMS.regenerate_HMS(delta);
+	print($EntityHMS.stamina);
 
 func _physics_process(delta):
 	movement(delta);
