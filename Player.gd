@@ -17,7 +17,6 @@ func movement(delta: float):
 		$EntityMovement.walk_in_direction(delta, movementDirectionInput);
 	
 	$EntityHMS.regenerate_HMS(delta);
-	print($EntityHMS.stamina);
 
 func _physics_process(delta):
 	movement(delta);

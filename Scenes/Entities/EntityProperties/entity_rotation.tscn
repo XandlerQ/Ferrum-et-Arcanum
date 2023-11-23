@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://xmdh20p6okij"]
+
+[ext_resource type="Script" path="res://Scenes/Entities/EntityProperties/entity_rotation.gd" id="1_d1aig"]
+
+[node name="EntityRotation" type="Node2D"]
+script = ExtResource("1_d1aig")
