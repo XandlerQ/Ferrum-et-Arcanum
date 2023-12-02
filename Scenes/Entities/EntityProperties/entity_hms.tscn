@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4u8u2k802ar7"]
 
-[ext_resource type="Script" path="res://EntityHMS.gd" id="1_784om"]
+[ext_resource type="Script" path="res://Scenes/Entities/EntityProperties/entity_hms.gd" id="1_nxtvp"]
 
 [node name="EntityHMS" type="Node2D"]
-script = ExtResource("1_784om")
+script = ExtResource("1_nxtvp")
