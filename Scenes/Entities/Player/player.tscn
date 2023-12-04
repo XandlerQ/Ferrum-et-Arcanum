@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bihay06vdi85b"]
 
 [ext_resource type="PackedScene" uid="uid://3v8rsr56lh20" path="res://Scenes/Entities/entity.tscn" id="1_le2jo"]
-[ext_resource type="Script" path="res://Scenes/Entities/player.gd" id="2_t56p7"]
+[ext_resource type="Script" path="res://Scenes/Entities/Player/player.gd" id="2_t56p7"]
 [ext_resource type="Texture2D" uid="uid://bgewakmcy8nme" path="res://Resources/Sprites/Player.png" id="3_iunee"]
 
 [node name="Player" instance=ExtResource("1_le2jo")]

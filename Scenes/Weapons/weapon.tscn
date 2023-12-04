@@ -1,5 +1,18 @@
-[gd_scene format=3 uid="uid://bwb5b3ltgf7n4"]
+[gd_scene load_steps=5 format=3 uid="uid://bwb5b3ltgf7n4"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="1_qaybu"]
+[ext_resource type="Texture2D" uid="uid://bhnpbskrm1b4e" path="res://Resources/Sprites/Weapons/Melee/16_broadsword.png" id="2_ok07y"]
+[ext_resource type="PackedScene" uid="uid://d035fmiaxxpi4" path="res://Scenes/Weapons/WeaponProperties/weapon_damage.tscn" id="2_x8jth"]
+[ext_resource type="PackedScene" uid="uid://b1jfiptglu8sm" path="res://Scenes/Weapons/WeaponProperties/weapon_movement.tscn" id="3_u16nq"]
 
 [node name="Weapon" type="Area2D"]
+script = ExtResource("1_qaybu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 0.785398
+texture = ExtResource("2_ok07y")
+
+[node name="WeaponDamage" parent="." instance=ExtResource("2_x8jth")]
+
+[node name="WeaponMovement" parent="." instance=ExtResource("3_u16nq")]

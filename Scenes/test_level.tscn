@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://be2w1kvqj6t8h"]
+[gd_scene load_steps=5 format=3 uid="uid://be2w1kvqj6t8h"]
 
 [ext_resource type="Texture2D" uid="uid://c3l16kik2kec2" path="res://Resources/Sprites/grass.png" id="1_awhpb"]
-[ext_resource type="PackedScene" uid="uid://bihay06vdi85b" path="res://Scenes/Entities/player.tscn" id="1_m4ip7"]
+[ext_resource type="PackedScene" uid="uid://bihay06vdi85b" path="res://Scenes/Entities/Player/player.tscn" id="1_m4ip7"]
 [ext_resource type="Script" path="res://Scenes/camera.gd" id="2_3q7ux"]
+[ext_resource type="PackedScene" uid="uid://bwb5b3ltgf7n4" path="res://Scenes/Weapons/weapon.tscn" id="4_38gn7"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -18,3 +19,6 @@ region_rect = Rect2(0, 0, 1000, 1000)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 script = ExtResource("2_3q7ux")
+
+[node name="Weapon" parent="." instance=ExtResource("4_38gn7")]
+position = Vector2(-32, 21)
