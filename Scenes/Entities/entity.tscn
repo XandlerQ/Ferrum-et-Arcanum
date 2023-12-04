@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://3v8rsr56lh20"]
+[gd_scene load_steps=7 format=3 uid="uid://3v8rsr56lh20"]
 
 [ext_resource type="PackedScene" uid="uid://ccan36u05qhbn" path="res://Scenes/Entities/EntityProperties/entity_movement.tscn" id="1_i3s4o"]
 [ext_resource type="Script" path="res://Scenes/Entities/entity.gd" id="1_ur5sv"]
 [ext_resource type="PackedScene" uid="uid://xmdh20p6okij" path="res://Scenes/Entities/EntityProperties/entity_rotation.tscn" id="3_4oe8l"]
 [ext_resource type="PackedScene" uid="uid://b4u8u2k802ar7" path="res://Scenes/Entities/EntityProperties/entity_hms.tscn" id="4_j8c6l"]
+[ext_resource type="PackedScene" uid="uid://daa2uqknrwvps" path="res://Scenes/Entities/EntityProperties/entity_attributes.tscn" id="5_b5li6"]
+[ext_resource type="PackedScene" uid="uid://csqe284ndc8yv" path="res://Scenes/Tech/projectile_container.tscn" id="6_kpc0i"]
 
 [node name="Entity" type="CharacterBody2D"]
 script = ExtResource("1_ur5sv")
@@ -15,3 +17,7 @@ script = ExtResource("1_ur5sv")
 [node name="EntityRotation" parent="." instance=ExtResource("3_4oe8l")]
 
 [node name="EntityHMS" parent="." instance=ExtResource("4_j8c6l")]
+
+[node name="EntityAttributes" parent="." instance=ExtResource("5_b5li6")]
+
+[node name="ProjectileContainer" parent="." instance=ExtResource("6_kpc0i")]
