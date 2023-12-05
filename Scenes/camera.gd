@@ -27,6 +27,6 @@ static func lerp_overshoot_v(from: Vector2, to: Vector2, weight: float, overshoo
 	
 	return Vector2(x,y);
 
-func _physics_process(_delta):
+func _process(_delta):
 	self.fCameraPosition = PlayerCamera.lerp_overshoot_v(self.position, fPlayer.position, 0.2, self.fOvershoot);
 	self.position = self.fCameraPosition;

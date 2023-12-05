@@ -16,3 +16,7 @@ texture = ExtResource("2_ok07y")
 [node name="WeaponDamage" parent="." instance=ExtResource("2_x8jth")]
 
 [node name="WeaponMovement" parent="." instance=ExtResource("3_u16nq")]
+
+[node name="SDTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SDTimer" to="." method="_on_sd_timer_timeout"]
