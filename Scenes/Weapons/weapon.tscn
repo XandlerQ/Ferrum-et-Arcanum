@@ -10,8 +10,11 @@ script = ExtResource("1_qaybu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(7, 0)
 rotation = 0.785398
 texture = ExtResource("2_ok07y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
 [node name="WeaponDamage" parent="." instance=ExtResource("2_x8jth")]
 

@@ -8,11 +8,11 @@ func movement(delta: float):
 	var runningInput: bool = $PlayerInput.get_run_input();
 	var dashInput: bool = $PlayerInput.get_dash_input();
 	$EntityRotation.rotate_to_target(delta, get_global_mouse_position());
-	if (runningInput):
-		$EntityMovement.run_in_direction(delta, movementDirectionInput);
-	elif (dashInput):
+	if (dashInput):
 		$EntityMovement.dash_in_direction(delta, movementDirectionInput);
 		$EntityHMS.lower_stamina(2);
+	elif (runningInput):
+		$EntityMovement.run_in_direction(delta, movementDirectionInput);
 	else:
 		$EntityMovement.walk_in_direction(delta, movementDirectionInput);
 	

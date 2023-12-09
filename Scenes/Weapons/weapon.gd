@@ -13,15 +13,15 @@ func set_ininital_position(wielderGlobalPosition: Vector2, wielderOrientation: f
 	var initialGlobalPosition: Vector2 = wielderGlobalPosition + $WeaponMovement.trajectoryRelativeOrigin.rotated(wielderOrientation);
 	global_position = initialGlobalPosition
 	var targetInitialPositionDifference: Vector2 = targetGlobalPosition - initialGlobalPosition;
-	if (targetInitialPositionDifference.length() > 3 * $WeaponMovement.trajectoryRelativeOrigin.length()):
-		$WeaponMovement.direction = (targetGlobalPosition - initialGlobalPosition).normalized();
-	else:
-		$WeaponMovement.direction = (targetGlobalPosition - wielderGlobalPosition).normalized();
-	rotation = $WeaponMovement.get_orientation_along_trajectory();
+	var targetDistance: float = targetInitialPositionDifference.length();
+	var direction: Vector2 = ((targetDistance / 30) * targetInitialPositionDifference + (targetGlobalPosition - wielderGlobalPosition)).normalized();
+	$WeaponMovement.direction = direction;
+	rotation = direction.angle();
 
 func movement(delta: float):
+	$WeaponMovement.update_time_since_launch(delta);
 	$WeaponMovement.move_along_trajectory(delta);
-	$WeaponMovement.orient_along_trajectory();
+	$WeaponMovement.orient_along_trajectory(delta);
 
 func _process(delta):
 	movement(delta);
