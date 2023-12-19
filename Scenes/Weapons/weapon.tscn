@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bwb5b3ltgf7n4"]
 
 [ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="1_qaybu"]
-[ext_resource type="Texture2D" uid="uid://bhnpbskrm1b4e" path="res://Resources/Sprites/Weapons/Melee/16_broadsword.png" id="2_ok07y"]
+[ext_resource type="Texture2D" uid="uid://biab34lujurpa" path="res://Resources/Sprites/Tech/marker.png" id="2_wlapm"]
 [ext_resource type="PackedScene" uid="uid://d035fmiaxxpi4" path="res://Scenes/Weapons/WeaponProperties/weapon_damage.tscn" id="2_x8jth"]
 [ext_resource type="PackedScene" uid="uid://b1jfiptglu8sm" path="res://Scenes/Weapons/WeaponProperties/weapon_movement.tscn" id="3_u16nq"]
 
@@ -10,9 +10,8 @@ script = ExtResource("1_qaybu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(7, 0)
-rotation = 0.785398
-texture = ExtResource("2_ok07y")
+position = Vector2(0, -2.38419e-07)
+texture = ExtResource("2_wlapm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 

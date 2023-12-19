@@ -4,8 +4,3 @@
 
 [node name="WeaponMovement" type="Node2D"]
 script = ExtResource("1_23ltu")
-trajectoryType = null
-initialSpeed = null
-finalSpeed = null
-acceleration = null
-rotationSpeed = null
