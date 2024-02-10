@@ -1,23 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwb5b3ltgf7n4"]
+[gd_scene load_steps=4 format=3 uid="uid://cwap2m4brf72p"]
 
-[ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="1_qaybu"]
-[ext_resource type="Texture2D" uid="uid://biab34lujurpa" path="res://Resources/Sprites/Tech/marker.png" id="2_wlapm"]
-[ext_resource type="PackedScene" uid="uid://d035fmiaxxpi4" path="res://Scenes/Weapons/WeaponProperties/weapon_damage.tscn" id="2_x8jth"]
-[ext_resource type="PackedScene" uid="uid://b1jfiptglu8sm" path="res://Scenes/Weapons/WeaponProperties/weapon_movement.tscn" id="3_u16nq"]
+[ext_resource type="PackedScene" uid="uid://d035fmiaxxpi4" path="res://Scenes/Weapons/WeaponProperties/weapon_damage.tscn" id="1_4p3wl"]
+[ext_resource type="Script" path="res://Scenes/Weapons/weapon.gd" id="1_mwoy0"]
+[ext_resource type="Texture2D" uid="uid://3sqogxa2q8a8" path="res://Resources/Sprites/Weapons/Melee/16_shortsword.png" id="2_oahrk"]
 
 [node name="Weapon" type="Area2D"]
-script = ExtResource("1_qaybu")
+script = ExtResource("1_mwoy0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -2.38419e-07)
-texture = ExtResource("2_wlapm")
+position = Vector2(7, 0)
+rotation = 0.785398
+texture = ExtResource("2_oahrk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
-[node name="WeaponDamage" parent="." instance=ExtResource("2_x8jth")]
-
-[node name="WeaponMovement" parent="." instance=ExtResource("3_u16nq")]
+[node name="WeaponDamage" parent="." instance=ExtResource("1_4p3wl")]
 
 [node name="SDTimer" type="Timer" parent="."]
 

@@ -82,7 +82,7 @@ func get_velocity_to_walk_in_direction(delta: float, direction: Vector2) -> Vect
 	rVelocity = rVelocity.limit_length(limitLengthValue);
 	return rVelocity;
 
-func walk_in_direction(delta: float, direction: Vector2) -> bool:
+func walk_in_direction(delta: float, direction: Vector2) -> void:
 	if (direction == Vector2.ZERO):
 		return stop(delta);
 	update_entity_properties();
@@ -95,8 +95,6 @@ func walk_in_direction(delta: float, direction: Vector2) -> bool:
 	rVelocity += deltaVelocity;
 	rVelocity = rVelocity.limit_length(limitLengthValue);
 	entity.velocity = rVelocity;
-	var collided: bool = entity.move_and_slide();
-	return collided;
 
 func get_velocity_to_run_in_direction(delta: float, direction: Vector2) -> Vector2:
 	if (direction == Vector2.ZERO):
@@ -112,7 +110,7 @@ func get_velocity_to_run_in_direction(delta: float, direction: Vector2) -> Vecto
 	rVelocity = rVelocity.limit_length(limitLengthValue);
 	return rVelocity;
 
-func run_in_direction(delta: float, direction: Vector2) -> bool:
+func run_in_direction(delta: float, direction: Vector2) -> void:
 	if (direction == Vector2.ZERO):
 		return stop(delta);
 	update_entity_properties();
@@ -125,8 +123,6 @@ func run_in_direction(delta: float, direction: Vector2) -> bool:
 	rVelocity += deltaVelocity;
 	rVelocity = rVelocity.limit_length(limitLengthValue);
 	entity.velocity = rVelocity;
-	var collided: bool = entity.move_and_slide();
-	return collided;
 
 func get_velocity_to_dash_in_direction(delta: float, direction: Vector2) -> Vector2:
 	if (direction == Vector2.ZERO or !dashTimer.is_stopped()):
@@ -136,7 +132,7 @@ func get_velocity_to_dash_in_direction(delta: float, direction: Vector2) -> Vect
 	rVelocity += get_dash_speed() * direction;
 	return rVelocity;
 
-func dash_in_direction(delta: float, direction: Vector2) -> bool:
+func dash_in_direction(delta: float, direction: Vector2) -> void:
 	if (direction == Vector2.ZERO or !dashTimer.is_stopped()):
 		return stop(delta);
 	dashTimer.start();
@@ -144,8 +140,6 @@ func dash_in_direction(delta: float, direction: Vector2) -> bool:
 	var rVelocity: Vector2 = entityVelocity / 2;
 	rVelocity += get_dash_speed() * direction;
 	entity.velocity = rVelocity;
-	var collided: bool = entity.move_and_slide();
-	return collided;
 
 func get_velocity_to_stop(delta: float) -> Vector2:
 	update_entity_properties();
@@ -161,7 +155,7 @@ func get_velocity_to_stop(delta: float) -> Vector2:
 		rVelocity = Vector2.ZERO;
 	return rVelocity;
 
-func stop(delta: float) -> bool:
+func stop(delta: float) -> void:
 	update_entity_properties();
 	if (entityVelocity == Vector2.ZERO):
 		return entity.move_and_slide();
@@ -174,5 +168,3 @@ func stop(delta: float) -> bool:
 	else:
 		rVelocity = Vector2.ZERO;
 	entity.velocity = rVelocity;
-	var collided: bool = entity.move_and_slide();
-	return collided;

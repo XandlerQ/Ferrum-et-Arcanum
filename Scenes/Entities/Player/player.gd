@@ -1,8 +1,6 @@
 extends Entity;
 class_name Player;
 
-signal player_weapon_launched(weapon: Weapon);
-
 func movement(delta: float):
 	var movementDirectionInput: Vector2 = $PlayerInput.get_movement_direction_input();
 	var runningInput: bool = $PlayerInput.get_run_input();
@@ -15,12 +13,8 @@ func movement(delta: float):
 		$EntityMovement.run_in_direction(delta, movementDirectionInput);
 	else:
 		$EntityMovement.walk_in_direction(delta, movementDirectionInput);
-	
+	move_and_slide();
 	$EntityHMS.regenerate_HMS(delta);
 
-func _process(delta):
+func _physics_process(delta):
 	movement(delta);
-
-
-func _on_player_action_weapon_launched(weapon):
-	player_weapon_launched.emit(weapon);

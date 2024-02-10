@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkk14ac4l810m"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/WeaponProperties/weapon_melee_movement.gd" id="1_x4at0"]
+
+[node name="WeaponMeleeMovement" type="Node2D"]
+script = ExtResource("1_x4at0")

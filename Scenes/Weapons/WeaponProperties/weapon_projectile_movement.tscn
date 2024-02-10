@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1jfiptglu8sm"]
+
+[ext_resource type="Script" path="res://Scenes/Weapons/WeaponProperties/weapon_projectile_movement.gd" id="1_bwn6j"]
+
+[node name="ProjectileWeaponMovement" type="Node2D"]
+script = ExtResource("1_bwn6j")

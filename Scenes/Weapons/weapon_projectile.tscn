@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cixdctqrey6d2"]
+
+[ext_resource type="PackedScene" uid="uid://cwap2m4brf72p" path="res://Scenes/Weapons/weapon.tscn" id="1_akgba"]
+[ext_resource type="PackedScene" uid="uid://b1jfiptglu8sm" path="res://Scenes/Weapons/WeaponProperties/weapon_projectile_movement.tscn" id="2_1ox7t"]
+[ext_resource type="Script" path="res://Scenes/Weapons/weapon_projectile.gd" id="2_e1ig5"]
+
+[node name="WeaponProjectile" instance=ExtResource("1_akgba")]
+script = ExtResource("2_e1ig5")
+
+[node name="WeaponProjectileMovement" parent="." index="3" instance=ExtResource("2_1ox7t")]

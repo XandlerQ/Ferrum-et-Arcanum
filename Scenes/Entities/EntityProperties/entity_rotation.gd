@@ -21,7 +21,7 @@ static func normalize_angle(angle: float) -> float:
 	while (normalizedAngle < -PI): normalizedAngle += 2 * PI;
 	return normalizedAngle;
 
-static func get_ot_angle(delta: float, origin: float, target: float, baseRotationSpeed: float, additionalRotationSpeed: float) -> float:
+static func get_ot_angle(delta: float, origin: float, target: float, baseRotSpeed: float, additionalRotSpeed: float) -> float:
 	var angleDifference: float = target - origin;
 	var newTarget: float = target; # New target angle
 	# If angle difference curve contains -PI to PI jump,
@@ -35,7 +35,7 @@ static func get_ot_angle(delta: float, origin: float, target: float, baseRotatio
 	var distanceSign := signf(distance); #Angle distance sign
 	# Calculate rotation speed = [base rotation speed in the correct direction]
 	# + [relative rotation speed] * [distance factor]
-	var rotationSpeed: float = distanceSign * baseRotationSpeed + additionalRotationSpeed * (distance / PI); 
+	var rotationSpeed: float = distanceSign * baseRotSpeed + additionalRotSpeed * (distance / PI); 
 	# Calculate new rotation angle taking delta into account
 	var rotationAngle = origin + rotationSpeed * delta;
 	
