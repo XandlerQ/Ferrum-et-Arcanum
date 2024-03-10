@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcneu0i2rcqa5"]
+
+[ext_resource type="Script" path="res://Assets/smoother.gd" id="1_ucj7t"]
+
+[node name="Smoother" type="Node"]
+script = ExtResource("1_ucj7t")

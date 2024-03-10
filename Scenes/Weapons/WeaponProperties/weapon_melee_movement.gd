@@ -9,14 +9,14 @@ class_name WeaponMeleeMovement;
 @export var trajectoryOriginAngle: float = PI / 2;
 
 # Pivot radius
-@export var pivotRadius: float = 15;
+@export var pivotRadius: float;
 # Pivot speed
-@export var pivotSpeed: float = -1.5;
+@export var pivotSpeed: float;
 
 # Initial self rotation angle
 @export var initialRotationAngle: float = 0;
 # Projectile self rotation speed (radians / time)
-@export var rotationSpeed: float = 0;
+@export var rotationSpeed: float;
 
 # Time since projectile launch
 var timeSinceLaunch: float = 0;
@@ -28,7 +28,7 @@ func pivot_radius_function(_t: float) -> float:
 	return constPivotRadius;
 
 func pivot_speed_function(_t: float) -> float:
-	var constPivotSpeed = -1.5;
+	var constPivotSpeed = -5;
 	return constPivotSpeed;
 
 func rotation_speed_function(_t: float) -> float:
